@@ -2,22 +2,28 @@ import 'dart:convert';
 import 'dart:ffi';
 import 'package:http/http.dart' as http;
 
-class MothersVitals {
-  getMothersVitals() async {
+class FoetusVitals {
+  getFoetusVitals() async {
     var url = Uri.parse('https://thingspeak.com/channels/1707901/feed.json');
     var response = await http.get(url);
     Map<String, dynamic> json = jsonDecode(response.body);
     int len = json["feeds"].length;
-    List<double> motherVitals = [];
+    List<double> foetusVitals = [];
     int i;
     for (i = 0; i < len; i++) {
       String vitals = json["feeds"][i]["field1"];
-      if (!vitals.contains("0")) {
-        double test = double.parse(vitals);
-        motherVitals.add(test);
+      double vital = double.parse(vitals);
+      if (vital < 90 && !vitals.contains("0")) {
+        foetusVitals.add(vital * 2);
+      } else if (vital > 200 && !vitals.contains("0")) {
+        foetusVitals.add(vital / 3);
       }
+      // } else if (!vitals.contains("0")) {
+      //   double test = double.parse(vitals);
+      //   foetusVitals.add(test);
+      // }
     }
-    return motherVitals;
+    return foetusVitals;
   }
 
   getTimeStamp() async {

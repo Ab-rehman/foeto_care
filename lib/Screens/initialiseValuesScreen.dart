@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foeto_care/Screens/bottom_navbar_screen.dart';
+import 'package:foeto_care/Services/foetusVitalsJson.dart';
 import 'package:foeto_care/Services/motherVitalsJson.dart';
 
 List<double> mothersVitals = [];
+List<double> foetusVitals = [];
+List<String> motherTimeStamp = [];
+List<String> foetusTimeStamp = [];
 
 class InitialiseValuesScreen extends StatelessWidget {
   const InitialiseValuesScreen({Key? key}) : super(key: key);
@@ -10,8 +14,11 @@ class InitialiseValuesScreen extends StatelessWidget {
   Future<String> initialiseValues() async {
     return Future.delayed(Duration.zero, () async {
       MothersVitals mothersVitalsClassObject = MothersVitals();
+      FoetusVitals foetusVitalsClassObject = FoetusVitals();
       mothersVitals = await mothersVitalsClassObject.getMothersVitals();
-      mothersVitals.forEach((element) {print(element);});
+      foetusVitals = await foetusVitalsClassObject.getFoetusVitals();
+      motherTimeStamp = await mothersVitalsClassObject.getTimeStamp();
+      foetusTimeStamp = await foetusVitalsClassObject.getTimeStamp();
       return "true";
     });
 
