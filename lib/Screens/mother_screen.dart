@@ -1,12 +1,15 @@
 import 'package:chart_sparkline/chart_sparkline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:foeto_care/Screens/bottom_navbar_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 import 'dart:math' as math;
+
+import 'initilaiseValuesScreen.dart';
 
 class MotherScreen extends StatefulWidget {
   const MotherScreen({Key? key}) : super(key: key);
@@ -16,6 +19,7 @@ class MotherScreen extends StatefulWidget {
 }
 
 class _MotherScreenState extends State<MotherScreen> {
+
   var _val=45;
   @override
   Widget build(BuildContext context) {
@@ -140,21 +144,24 @@ class _MotherScreenState extends State<MotherScreen> {
                           width: screenSize.width * 0.80,
                           height: screenSize.width * 0.32 * 0.6,
                           child: Sparkline(
-                            data: [
-                              78.0,
-                              79.0,
-                              80.0,
-                              76.0,
-                              85.0,
-                              88.0,
-                              80.0,
-                              79.0,
-                              81.0,
-                              82.0,
-                              78.0,
-                              79.0,
-                              80.0,
-                            ],
+                            data: mothersVitals,
+                            // data: [
+                            //   0.0,
+                            //   78.0,
+                            //   79.0,
+                            //   80.0,
+                            //   76.0,
+                            //   85.0,
+                            //   88.0,
+                            //   80.0,
+                            //   79.0,
+                            //   81.0,
+                            //   82.0,
+                            //   78.0,
+                            //   79.0,
+                            //   80.0,
+                            //   200.0,
+                            // ],
                             useCubicSmoothing: true,
                             cubicSmoothingFactor: 0.1,
                             lineColor: Colors.pink,

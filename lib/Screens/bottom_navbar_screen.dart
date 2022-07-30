@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:foeto_care/Screens/foetus_screen.dart';
 import 'mother_screen.dart';
+import 'package:foeto_care/Services/motherVitalsJson.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   BottomNavBarScreen({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class BottomNavBarScreen extends StatefulWidget {
 }
 
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
+
+
   int _index = 0;
   final screens = [
     MotherScreen(),
