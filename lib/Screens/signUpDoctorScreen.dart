@@ -82,7 +82,8 @@ class SignUpDoctorScreen extends StatelessWidget {
                       height: screenSize.height * 0.09,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'doctorScreen');
+                          FocusManager.instance.primaryFocus?.unfocus();
+                          Navigator.pushNamedAndRemoveUntil(context, 'doctorScreen', ModalRoute.withName('welcomeScreen'));
                         },
                         child: Text('Register',
                             style: GoogleFonts.roboto(

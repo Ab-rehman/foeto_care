@@ -140,14 +140,14 @@ class _MotherScreenState extends State<MotherScreen> {
                                   " ${val.toInt()}",
                                   style: GoogleFonts.barlow(
                                     color: Colors.white,
-                                    fontSize: screenSize.height * 0.3 * 0.17,
+                                    fontSize: screenSize.height * 0.3 * 0.15,
                                   ),
                                 ),
                                 Text(
                                   " BPM",
                                   style: GoogleFonts.barlow(
                                     color: Colors.white,
-                                    fontSize: screenSize.height * 0.3 * 0.07,
+                                    fontSize: screenSize.height * 0.3 * 0.06,
                                   ),
                                 ),
                               ],
@@ -188,7 +188,7 @@ class _MotherScreenState extends State<MotherScreen> {
                         Text(
                           "Average heart rate over the whole day is ${avg.toInt()} BPM",
                           style: GoogleFonts.barlow(
-                              fontSize: screenSize.width * 0.9 * 0.04,
+                              fontSize: screenSize.width * 0.9 * 0.034,
                               color: Colors.white),
                         ),
                         const SizedBox(
@@ -196,7 +196,7 @@ class _MotherScreenState extends State<MotherScreen> {
                         ),
                         Container(
                           width: screenSize.width * 0.80,
-                          height: screenSize.width * 0.32 * 0.6,
+                          height: screenSize.width * 0.32 * 0.55,
                           child: Sparkline(
                             data: mothersVitals,
                             useCubicSmoothing: true,
@@ -254,7 +254,7 @@ class _MotherScreenState extends State<MotherScreen> {
                                 height: 5.0,
                               ),
                               Text(
-                                "26/11/2021",
+                                date,
                                 style: GoogleFonts.barlow(
                                   color: Colors.grey.shade600,
                                   fontSize: screenSize.height * 0.3 * 0.06,
@@ -341,7 +341,7 @@ class _MotherScreenState extends State<MotherScreen> {
                                 height: 5.0,
                               ),
                               Text(
-                                "20/10/2021",
+                                date,
                                 style: GoogleFonts.barlow(
                                   color: Colors.grey.shade600,
                                   fontSize: screenSize.height * 0.3 * 0.06,

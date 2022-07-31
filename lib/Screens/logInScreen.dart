@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:foeto_care/creds.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+TextEditingController email = new TextEditingController();
+TextEditingController pass = new TextEditingController();
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -58,8 +62,9 @@ class LogInScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.0,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    controller: email,
+                    decoration: const InputDecoration(
                       hintText: 'Enter your email',
                       hintStyle: TextStyle(
                           color: Colors.grey
@@ -95,9 +100,10 @@ class LogInScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.0,
                   ),
-                  const TextField(
+                  TextField(
+                    controller: pass,
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Enter your Password',
                       hintStyle: TextStyle(
                           color: Colors.grey
@@ -131,7 +137,23 @@ class LogInScreen extends StatelessWidget {
                         height: screenSize.height * 0.09,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, 'initialiseValuesScreen');
+                            doctorsList.forEach((doctor) {
+                              if(doctor.email == email.value.text && doctor.password == pass.value.text) {
+                                FocusManager.instance.primaryFocus?.unfocus();
+                                email.clear();
+                                pass.clear();
+                                Navigator.pushNamedAndRemoveUntil(context, 'doctorScreen',ModalRoute.withName('welcomeScreen'));
+                              }
+                            });
+                            usersList.forEach((user) {
+                              if(user.email == email.value.text && user.password == pass.value.text) {
+                                FocusManager.instance.primaryFocus?.unfocus();
+                                email.clear();
+                                pass.clear();
+                                Navigator.pushNamedAndRemoveUntil(context, 'initialiseValuesScreen',ModalRoute.withName('welcomeScreen'));
+                              }
+                            });
+
                           },
                           child: Text('Login',
                               style: GoogleFonts.roboto(

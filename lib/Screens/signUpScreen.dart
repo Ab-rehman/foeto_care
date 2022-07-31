@@ -198,7 +198,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: isButtonDisabled
                           ? null
                           : () {
-                              buttonColor = Colors.grey.withOpacity(0.5);
                               if (isMotherPressed) {
                                 isButtonDisabled = true;
                                 isDoctorPressed = false;

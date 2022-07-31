@@ -83,7 +83,8 @@ class SignUpMotherScreen extends StatelessWidget {
                       height: screenSize.height * 0.09,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'initialiseValuesScreen');
+                          FocusManager.instance.primaryFocus?.unfocus();
+                          Navigator.pushNamedAndRemoveUntil(context, 'initialiseValuesScreen', ModalRoute.withName('welcomeScreen'));
                         },
                         child: Text('Register',
                             style: GoogleFonts.roboto(

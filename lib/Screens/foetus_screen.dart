@@ -132,14 +132,14 @@ class _FoetusScreenState extends State<FoetusScreen> {
                                 " ${val.toInt()}",
                                 style: GoogleFonts.barlow(
                                   color: Colors.white,
-                                  fontSize: screenSize.height * 0.3 * 0.17,
+                                  fontSize: screenSize.height * 0.3 * 0.15,
                                 ),
                               ),
                               Text(
                                 " BPM",
                                 style: GoogleFonts.barlow(
                                   color: Colors.white,
-                                  fontSize: screenSize.height * 0.3 * 0.07,
+                                  fontSize: screenSize.height * 0.3 * 0.06,
                                 ),
                               ),
                             ],
@@ -180,7 +180,7 @@ class _FoetusScreenState extends State<FoetusScreen> {
                       Text(
                         "Average heart rate over the whole day is ${avg.toInt()} BPM",
                         style: GoogleFonts.barlow(
-                            fontSize: screenSize.width * 0.9 * 0.04,
+                            fontSize: screenSize.width * 0.9 * 0.034,
                             color: Colors.white),
                       ),
                       const SizedBox(
@@ -188,7 +188,7 @@ class _FoetusScreenState extends State<FoetusScreen> {
                       ),
                       Container(
                         width: screenSize.width * 0.80,
-                        height: screenSize.width * 0.32 * 0.6,
+                        height: screenSize.width * 0.32 * 0.55,
                         child: Sparkline(
                           data: foetusVitals,
                           useCubicSmoothing: true,

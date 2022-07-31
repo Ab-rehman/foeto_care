@@ -60,9 +60,9 @@ class WelcomeScreen extends StatelessWidget {
                     height: screenSize.height * 0.06,
                   ),
                   Text(
-                    'Take notes, reminders, set targets, collect resources, and much more',
+                    'Every Beat Counts.',
                     style: GoogleFonts.roboto(
-                      fontSize: screenSize.width * 0.9 * 0.05,
+                      fontSize: screenSize.width * 0.9 * 0.07,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),

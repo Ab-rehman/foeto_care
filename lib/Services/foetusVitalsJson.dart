@@ -35,7 +35,7 @@ class FoetusVitals {
     int i;
     for (i = 0; i < len; i++) {
       String dateTime = json["feeds"][i]["created_at"];
-      String time = dateTime.substring(11, 16);
+      String time = dateTime.substring(0, 10);
 
       timeStamp.add(time);
     }
