@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1032964065877",
+    "project_id": "foeto-care",
+    "storage_bucket": "foeto-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032964065877:android:4655d3f19e8b24fb7e22dc",
+        "android_client_info": {
+          "package_name": "com.project.foetocare.foeto_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032964065877-os801qavln476oggoirjr2l427egl7ib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtixcUd6nPiQBZQBRCGzrukdlrPwxGdAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032964065877-os801qavln476oggoirjr2l427egl7ib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

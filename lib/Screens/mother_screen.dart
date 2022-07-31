@@ -42,10 +42,10 @@ class _MotherScreenState extends State<MotherScreen> {
   }
 
   updateDataSource(Timer timer) async {
-    // mothersVitals = await mothersVitalsClassObject.getMothersVitals();
-    //motherTimeStamp = await mothersVitalsClassObject.getTimeStamp();
-    var temp = Random().nextInt(80);
     var len = mothersVitals.length;
+    // mothersVitals = await mothersVitalsClassObject.getMothersVitals();
+    // motherTimeStamp = await mothersVitalsClassObject.getTimeStamp();
+    var temp = Random().nextInt(8)+72;
     mothersVitals.add(double.parse(temp.toString()));
     var newlen = mothersVitals.length;
     for (; len < newlen; len++) mothersVitals.removeAt(0);

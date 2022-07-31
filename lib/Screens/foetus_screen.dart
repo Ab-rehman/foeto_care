@@ -18,7 +18,7 @@ class FoetusScreen extends StatefulWidget {
 FoetusVitals foetusVitalsClassObject = FoetusVitals();
 Timer? timer, timer1;
 List<double> data = [28, 30, 12, 50, 2];
-String date = foetusTimeStamp.elementAt(foetusTimeStamp.length-1);
+String date = foetusTimeStamp.elementAt(foetusTimeStamp.length - 1);
 double val = foetusVitals.elementAt(foetusVitals.length - 1);
 double avg =
     foetusVitals.map((m) => m).reduce((a, b) => a + b) / foetusVitals.length;
@@ -31,15 +31,15 @@ class _FoetusScreenState extends State<FoetusScreen> {
       val = foetusVitals.elementAt(foetusVitals.length - 1);
       avg = foetusVitals.map((m) => m).reduce((a, b) => a + b) /
           foetusVitals.length;
-      date = foetusTimeStamp.elementAt(foetusTimeStamp.length-1);
+      date = foetusTimeStamp.elementAt(foetusTimeStamp.length - 1);
     });
   }
 
   updateDataSource(Timer timer) async {
+    var len = foetusVitals.length;
     // foetusVitals = await foetusVitalsClassObject.getFoetusVitals();
     // foetusTimeStamp = await foetusVitalsClassObject.getTimeStamp();
-    var temp = Random().nextInt(80);
-    var len = foetusVitals.length;
+    var temp = Random().nextInt(10)+160;
     foetusVitals.add(double.parse(temp.toString()));
     var newlen = foetusVitals.length;
     for (; len < newlen; len++) foetusVitals.removeAt(0);
@@ -127,7 +127,6 @@ class _FoetusScreenState extends State<FoetusScreen> {
                                 size: screenSize.height * 0.3 * 0.13,
                                 color: Colors.red,
                               ),
-
                               Text(
                                 " ${val.toInt()}",
                                 style: GoogleFonts.barlow(
@@ -253,7 +252,8 @@ class _FoetusScreenState extends State<FoetusScreen> {
                       height: screenSize.height * 0.3893 * 0.05,
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                       height: screenSize.height * 0.3893 * 0.4,
                       width: screenSize.width * 0.9,
                       decoration: BoxDecoration(
@@ -344,8 +344,11 @@ class _FoetusScreenState extends State<FoetusScreen> {
                                 fontSize: screenSize.height * 0.9 * 0.023,
                                 color: Colors.white),
                           ),
-
-                          Icon(Icons.arrow_forward_ios,color: Colors.white,size: screenSize.height*0.38*0.05,)
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.white,
+                            size: screenSize.height * 0.38 * 0.05,
+                          )
                         ],
                       ),
                     ),
